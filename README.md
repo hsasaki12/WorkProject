@@ -1,24 +1,20 @@
-# README
+## Rails環境構築用プロジェクトファイル
+開発環境：Cloud9
+RailsVerion：rails 7.0.4
+Webサーバ：puma 5.6.4
+DB：sqlite3 1.4.2
+デザイン：bootstrap-sass 3.4.1
+ - app/assets/stylesheets/custom.scss
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+clone後の設定について
+```
+$ git clone https://github.com/hsasaki12/hello_app.git
+$ cd hello_app/
+$ bundle _2.3.14_ config set --local without 'production'
+$ bundle _2.3.14_ install
+$ bundle _2.3.14_ update
+$ git init
+$ git add -A
+$ git commit -m "Initialize repository"
+```
