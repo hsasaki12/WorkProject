@@ -17,4 +17,8 @@ $ bundle _2.3.14_ update
 $ git init
 $ git add -A
 $ git commit -m "Initialize repository"
+
+GitHubリポジトリを新規作成
+$ git remote set-url origin <新規作成リポジトリのURL>
+$ git push origin main
 ```
