@@ -1,9 +1,9 @@
 ## Rails環境構築用プロジェクトファイル
-開発環境：Cloud9
-RailsVerion：rails 7.0.4
-Webサーバ：puma 5.6.4
-DB：sqlite3 1.4.2
-デザイン：bootstrap-sass 3.4.1
+開発環境：Cloud9 /
+RailsVerion：rails 7.0.4 /
+Webサーバ：puma 5.6.4 /
+DB：sqlite3 1.4.2 /
+デザイン：bootstrap-sass 3.4.1 /
  - app/assets/stylesheets/custom.scss
 
 
