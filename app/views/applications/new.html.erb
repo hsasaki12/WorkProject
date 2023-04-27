@@ -3,6 +3,9 @@
 <% if @quest.file.attached? %>
   <%= link_to "ファイルをダウンロードする", url_for(@quest.file) %>
 <% end %>
+
+<%= link_to "応募しますか？", applications_path(application: {quest_id: @quest.id}), method: :post %>
+
 <% if current_user == @quest.user %>
   <%= link_to "クエストボード", quests_path %>
   <%= link_to "クエストを編集する", edit_quest_path(@quest) %>
