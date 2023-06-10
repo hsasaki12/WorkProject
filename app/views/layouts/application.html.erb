@@ -7,17 +7,20 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <!-- Bootstrap CSSの追加 -->
+    <%= stylesheet_link_tag 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' %> 
   </head>
   
-  <header>
-    <%= link_to 'トラブルバスターズ', quests_path %>
-    <%= link_to "ログイン", new_user_session_path %>
-    <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-    <%= link_to "ユーザー登録", new_user_registration_path %>
-    <%= link_to "パスワードを忘れた場合", new_user_password_path %>
-  </header>
-
+  <!-- ヘッダーの部分 -->
+  <%= render partial: 'layouts/_partials/header' %>
+  
+  <!-- bodyの部分 -->
   <body>
     <%= yield %>
   </body>
+  
+  <!-- フッターの部分 -->
+  <%= render partial: 'layouts/_partials/footer' %>
+
+
 </html>

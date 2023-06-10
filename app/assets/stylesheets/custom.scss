@@ -1,22 +1,163 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+:root {
+  --main-color: #ff6347;
+  --hover-color: #ff7f50;
+  --font-main: Arial, sans-serif;
+  --background-color: #f2f2f2;
+  --header-color: #333;
+  --header-shadow: 0px 2px 10px rgba(0, 0, 0, 0.5);
+}
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f2f2f2;
-  }
-  
+  font-family: var(--font-main);
+  background-color: var(--background-color);
+  font-size: 18px;
+}
+
+.container {
+  width: 80%;
+  margin: auto;
+}
+
+header {
+  padding: 20px;
+  background-color: var(--header-color);
+  color: #fff;
+  box-shadow: var(--header-shadow);
+}
+
+header a {
+  margin-right: 10px;
+  color: #fff;
+  text-decoration: none;
+}
+
+header a:hover {
+  text-decoration: underline;
+  color: var(--hover-color);
+}
+
+.navbar-brand {
+  font-size: 20px; /* Adjusted font size */
+  font-weight: bold;
+  color: var(--main-color);
+}
+
+.navbar-toggler {
+  border: none;
+}
+
+.navbar-toggler:focus {
+  outline: none;
+}
+
+.navbar-nav .nav-item .nav-link {
+  color: #fff;
+  padding: 8px 16px;
+  transition: background-color 0.3s ease;
+  font-size: 20px;
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  color: var(--hover-color);
+}
+
+.form-inline .form-control {
+  margin-right: 10px;
+}
+
+.nav-link i.fa {
+  font-size: 24px;
+  margin-right: 5px;
+}
+
+/* Quest Card Styles */
+.quest-card {
+  margin-bottom: 20px;
+  box-shadow: 0 1px 3px rgba(0,0,0,.12), 0 1px 2px rgba(0,0,0,.24);
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+.quest-card .card-title {
+  margin-bottom: 10px;
+  font-size: 22px;
+}
+
+.quest-card .btn-primary {
+  background-color: #007bff;
+}
+
+.edit-form .btn-primary {
+  background-color: #007bff;
+}
+
+.edit-form .btn-secondary {
+  background-color: #6c757d;
+}
+
+@media (max-width: 768px) {
   header {
-    padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    padding: 10px;
   }
-  
-  header a {
-    margin-right: 10px;
-    color: #333;
-    text-decoration: none;
+
+  .navbar-brand {
+    font-size: 18px;
   }
+
+  .container {
+    width: 95%;
+  }
+}
+
+a:focus {
+  outline: 2px solid var(--main-color);
+}
+
+
+/* クエスト一覧ページのスタイル */
+.quests-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* カードを中央に寄せる */
+}
+
+.quest-card {
+  flex: 0 0 calc(33.33% - 20px); /* カードの幅を決め、一行に3つのカードが表示されるようにします */
+  margin: 10px; /* カード間のスペースを確保 */
+  box-shadow: 0 1px 3px rgba(0,0,0,.12), 0 1px 2px rgba(0,0,0,.24);
+}
+
+.quest-card .card-title {
+  margin-bottom: 10px;
+}
+
+.quest-card .btn-primary {
+  background-color: #007bff;
+}
+
+
+/* footer */
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 60px; /* Set the fixed height of the footer here */
+  line-height: 60px; /* Vertically center the text there */
+  background-color: #f5f5f5;
+  text-align: center;
+  padding: 0 15px; /* Horizontal padding */
+}
+
+.footer .back-to-top {
+  float: right;
+}
+
+.footer .text-muted {
+  margin: 0;
+}

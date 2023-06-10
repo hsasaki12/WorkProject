@@ -1,12 +1,14 @@
-<h1>クエスト一覧</h1>
-<%= link_to "New Quest", new_quest_path %>
-<hr>
+<h1 class="mt-4">クエスト一覧</h1>
+<%= link_to "New Quest", new_quest_path, class: "btn btn-primary mb-4" %>
 
-<% @quests.each do |quest| %>
-  <h2><%= link_to quest.title, quest_path(quest) %></h2>
-  <p>作成者: <%= quest.user.name %></p>
-  <p>難易度: <%= quest.difficulty %></p>
-  <p>報酬: <%= quest.reward %></p>
-  <%= link_to "応募する", new_quest_application_path(quest_id: quest.id) %>
-  <hr>
-<% end %>
+<div class="quests-container">
+  <% @quests.each do |quest| %>
+    <div class="quest-card">
+      <h2><%= link_to quest.title, quest_path(quest), class: 'card-title' %></h2>
+      <p>作成者: <%= quest.user.name %></p>
+      <p>難易度: <%= quest.difficulty %></p>
+      <p>報酬: <%= quest.reward %></p>
+      <%= link_to "応募する", new_quest_application_path(quest_id: quest.id), class: 'btn btn-primary' %>
+    </div>
+  <% end %>
+</div>
