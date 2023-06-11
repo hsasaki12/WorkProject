@@ -23,6 +23,13 @@ group :development do
   gem "web-console", "4.2.0"
 end
 
+group :development, :test do
+  gem 'rubocop', require: false
+  gem 'rubocop-rails'
+  gem 'rubocop-performance'
+  gem 'rubocop-rspec'
+end
+
 group :test do
   gem "capybara",                 "3.37.1"
   gem "selenium-webdriver",       "4.2.0"
