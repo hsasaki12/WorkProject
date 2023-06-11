@@ -11,4 +11,5 @@
       <%= link_to "応募する", new_quest_application_path(quest_id: quest.id), class: 'btn btn-primary' %>
     </div>
   <% end %>
+  <%= paginate @quests %>
 </div>
