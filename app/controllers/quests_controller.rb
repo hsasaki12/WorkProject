@@ -3,7 +3,7 @@ class QuestsController < ApplicationController
   before_action :set_quest, only: [:show, :edit, :update, :destroy]
 
   def index
-    @quests = Quest.all
+    @quests = Quest.page(params[:page]).per(9)
   end
 
   def show
