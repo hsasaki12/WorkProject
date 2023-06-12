@@ -19,8 +19,12 @@ clone後の操作
 ```
 $ git clone https://github.com/hsasaki12/WorkProject.git
 $ cd WorkProject/
-$ docker-compose up #裏でDockerを起動させる
-$ docker-compose exec app bash　#起動中のコンテナに入る
-$ bin/rails db:migrate RAILS_ENV=development　#マイグレーションコマンドを実行
+$ docker-compose build #Dockerfileを元にイメージを作成する
+$ docker-compose up -d #裏でコンテナを立ち上げる
+$ docker-compose exec app bash #起動中のコンテナに入る
 
+Railsコンテナ内操作
+$ bin/rails db:migrate RAILS_ENV=development #マイグレーションコマンドを実行
+$ rails db:seed #データ作成
+$ exit
 ```
