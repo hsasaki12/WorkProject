@@ -35,7 +35,7 @@ class QuestsController < ApplicationController
 
   def destroy
     @quest = Quest.find(params[:id])
-    byebug # ここで実行を一時停止
+    # byebug ここで実行を一時停止
     @quest.destroy
     redirect_to quests_url, notice: 'クエストを削除しました。'
   end

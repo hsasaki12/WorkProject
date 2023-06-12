@@ -1,32 +1,43 @@
-<div class="card-body">
-  <%= form_with(model: @quest, local: true) do |form| %>
-    <% if @quest.errors.any? %>
-      <div class="alert alert-danger" role="alert">
-        <h2><%= pluralize(@quest.errors.count, "error") %> prohibited this quest from being saved:</h2>
-        <ul>
-        <% @quest.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-        </ul>
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-8 offset-md-2">
+      <div class="card">
+        <div class="card-header">
+          <h3>クエストの編集</h3>
+        </div>
+        <div class="card-body">
+          <%= form_with(model: @quest, local: true) do |form| %>
+            <% if @quest.errors.any? %>
+              <div class="alert alert-danger" role="alert">
+                <h4><%= pluralize(@quest.errors.count, "error") %> prohibited this quest from being saved:</h4>
+                <ul>
+                  <% @quest.errors.full_messages.each do |message| %>
+                    <li><%= message %></li>
+                  <% end %>
+                </ul>
+              </div>
+            <% end %>
+
+            <!-- Form fields -->
+            <div class="form-group">
+              <%= form.label :title %>
+              <%= form.text_field :title, class: "form-control" %>
+            </div>
+
+            <div class="form-group">
+              <%= form.label :description %>
+              <%= form.text_area :description, class: "form-control" %>
+            </div>
+
+            <!-- ... other fields ... -->
+
+            <div class="actions text-center"> <!-- ボタンを中央揃えに -->
+              <%= form.submit "更新する", class: "btn btn-primary px-4 py-2" %> <!-- ボタンのパディングを増やす -->
+              <%= link_to "キャンセル", @quest, class: "btn btn-secondary px-4 py-2 ml-3" %> <!-- ボタンのパディングを増やし、左マージンを追加 -->
+            </div>
+          <% end %>
+        </div>
       </div>
-    <% end %>
-
-    <!-- Form fields -->
-    <div class="form-group">
-      <%= form.label :title %>
-      <%= form.text_field :title, class: "form-control" %>
     </div>
-
-    <div class="form-group">
-      <%= form.label :description %>
-      <%= form.text_area :description, class: "form-control" %>
-    </div>
-
-    <!-- ... other fields ... -->
-
-    <div class="actions text-center"> <!-- ボタンを中央揃えに -->
-      <%= form.submit "更新する", class: "btn btn-primary px-4 py-2" %> <!-- ボタンのパディングを増やす -->
-      <%= link_to "キャンセル", @quest, class: "btn btn-secondary px-4 py-2 ml-3" %> <!-- ボタンのパディングを増やし、左マージンを追加 -->
-    </div>
-  <% end %>
+  </div>
 </div>

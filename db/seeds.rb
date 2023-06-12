@@ -1,5 +1,5 @@
 # クエストのテストデータ作成
-9.times do |n|
+50.times do |n|
     Quest.create(
       title: "Sample Quest #{n+1}",
       description: "This is the sample quest number #{n+1}.",
@@ -19,6 +19,11 @@
       name: "User #{n+1}"
     )
   end
+  User.create(
+    email: "test@email.com",
+    encrypted_password: "test@email.com",
+    name: "test@email.com"
+  )
   
   puts "ユーザーのテストデータの作成が完了しました。"
   puts "クエストのテストデータの作成が完了しました。"
